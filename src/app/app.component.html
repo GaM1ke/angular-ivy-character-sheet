@@ -1,0 +1,394 @@
+<div>
+  <span>Name: </span>
+  <span>{{ character.name }}</span>
+</div>
+
+<div>
+  <span> Class List: </span>
+  <span *ngFor="let class of character.classes">
+    <span>{{ class.class }}</span>
+  </span>
+</div>
+
+<div>
+  <span>Background: </span>
+  <span>{{ character.background }}</span>
+</div>
+
+<div>
+  <span>Feats: </span>
+  <span>{{ character.feats }}</span>
+</div>
+
+<div>
+  <div>Attributes</div>
+  <div>Strength: {{ character.attributes.strength }}</div>
+  <div>Dexterity: {{ character.attributes.dexterity }}</div>
+  <div>Constitution: {{ character.attributes.constitution }}</div>
+  <div>Intelligence: {{ character.attributes.intelligence }}</div>
+  <div>Wisdom: {{ character.attributes.wisdom }}</div>
+  <div>Charisma: {{ character.attributes.charisma }}</div>
+</div>
+
+<div>Skill Proficiencies</div>
+
+<div (click)="setProficiency('athletics')">
+  <span
+    *ngIf="
+      character.skills.athletics.isProficient &&
+      !character.skills.athletics.hasExpertise
+    "
+    class="material-icons"
+    >check_circle_outline</span
+  >
+  <span *ngIf="!character.skills.athletics.isProficient" class="material-icons">
+    radio_button_unchecked</span
+  >
+  <span *ngIf="character.skills.athletics.hasExpertise" class="material-icons">
+    check_circle</span
+  >
+  <span>{{ character.skills.athletics.skill }}</span>
+</div>
+
+<div (click)="setProficiency('acrobatics')">
+  <span
+    *ngIf="
+      character.skills.acrobatics.isProficient &&
+      !character.skills.acrobatics.hasExpertise
+    "
+    class="material-icons"
+    >check_circle_outline</span
+  >
+  <span
+    *ngIf="!character.skills.acrobatics.isProficient"
+    class="material-icons"
+  >
+    radio_button_unchecked</span
+  >
+  <span *ngIf="character.skills.acrobatics.hasExpertise" class="material-icons">
+    check_circle</span
+  >
+  <span>{{ character.skills.acrobatics.skill }}</span>
+</div>
+
+<div (click)="setProficiency('sleightOfHand')">
+  <span
+    *ngIf="
+      character.skills.sleightOfHand.isProficient &&
+      !character.skills.sleightOfHand.hasExpertise
+    "
+    class="material-icons"
+    >check_circle_outline</span
+  >
+  <span
+    *ngIf="!character.skills.sleightOfHand.isProficient"
+    class="material-icons"
+  >
+    radio_button_unchecked</span
+  >
+  <span
+    *ngIf="character.skills.sleightOfHand.hasExpertise"
+    class="material-icons"
+  >
+    check_circle</span
+  >
+  <span>{{ character.skills.sleightOfHand.skill }}</span>
+</div>
+
+<div (click)="setProficiency('stealth')">
+  <span
+    *ngIf="
+      character.skills.stealth.isProficient &&
+      !character.skills.stealth.hasExpertise
+    "
+    class="material-icons"
+    >check_circle_outline</span
+  >
+  <span *ngIf="!character.skills.stealth.isProficient" class="material-icons">
+    radio_button_unchecked</span
+  >
+  <span *ngIf="character.skills.stealth.hasExpertise" class="material-icons">
+    check_circle</span
+  >
+  <span>{{ character.skills.stealth.skill }}</span>
+</div>
+
+<div (click)="setProficiency('arcana')">
+  <span
+    *ngIf="
+      character.skills.arcana.isProficient &&
+      !character.skills.arcana.hasExpertise
+    "
+    class="material-icons"
+    >check_circle_outline</span
+  >
+  <span *ngIf="!character.skills.arcana.isProficient" class="material-icons">
+    radio_button_unchecked</span
+  >
+  <span *ngIf="character.skills.arcana.hasExpertise" class="material-icons">
+    check_circle</span
+  >
+  <span>{{ character.skills.arcana.skill }}</span>
+</div>
+
+<div (click)="setProficiency('history')">
+  <span
+    *ngIf="
+      character.skills.history.isProficient &&
+      !character.skills.history.hasExpertise
+    "
+    class="material-icons"
+    >check_circle_outline</span
+  >
+  <span *ngIf="!character.skills.history.isProficient" class="material-icons">
+    radio_button_unchecked</span
+  >
+  <span *ngIf="character.skills.history.hasExpertise" class="material-icons">
+    check_circle</span
+  >
+  <span>{{ character.skills.history.skill }}</span>
+</div>
+
+<div (click)="setProficiency('investigation')">
+  <span
+    *ngIf="
+      character.skills.investigation.isProficient &&
+      !character.skills.investigation.hasExpertise
+    "
+    class="material-icons"
+    >check_circle_outline</span
+  >
+  <span
+    *ngIf="!character.skills.investigation.isProficient"
+    class="material-icons"
+  >
+    radio_button_unchecked</span
+  >
+  <span
+    *ngIf="character.skills.investigation.hasExpertise"
+    class="material-icons"
+  >
+    check_circle</span
+  >
+  <span>{{ character.skills.investigation.skill }}</span>
+</div>
+
+<div (click)="setProficiency('nature')">
+  <span
+    *ngIf="
+      character.skills.nature.isProficient &&
+      !character.skills.nature.hasExpertise
+    "
+    class="material-icons"
+    >check_circle_outline</span
+  >
+  <span *ngIf="!character.skills.nature.isProficient" class="material-icons">
+    radio_button_unchecked</span
+  >
+  <span *ngIf="character.skills.nature.hasExpertise" class="material-icons">
+    check_circle</span
+  >
+  <span>{{ character.skills.nature.skill }}</span>
+</div>
+
+<div (click)="setProficiency('religion')">
+  <span
+    *ngIf="
+      character.skills.religion.isProficient &&
+      !character.skills.religion.hasExpertise
+    "
+    class="material-icons"
+    >check_circle_outline</span
+  >
+  <span *ngIf="!character.skills.religion.isProficient" class="material-icons">
+    radio_button_unchecked</span
+  >
+  <span *ngIf="character.skills.religion.hasExpertise" class="material-icons">
+    check_circle</span
+  >
+  <span>{{ character.skills.religion.skill }}</span>
+</div>
+
+<div (click)="setProficiency('animalHandling')">
+  <span
+    *ngIf="
+      character.skills.animalHandling.isProficient &&
+      !character.skills.animalHandling.hasExpertise
+    "
+    class="material-icons"
+    >check_circle_outline</span
+  >
+  <span
+    *ngIf="!character.skills.animalHandling.isProficient"
+    class="material-icons"
+  >
+    radio_button_unchecked</span
+  >
+  <span
+    *ngIf="character.skills.animalHandling.hasExpertise"
+    class="material-icons"
+  >
+    check_circle</span
+  >
+  <span>{{ character.skills.animalHandling.skill }}</span>
+</div>
+
+<div (click)="setProficiency('insight')">
+  <span
+    *ngIf="
+      character.skills.insight.isProficient &&
+      !character.skills.insight.hasExpertise
+    "
+    class="material-icons"
+    >check_circle_outline</span
+  >
+  <span *ngIf="!character.skills.insight.isProficient" class="material-icons">
+    radio_button_unchecked</span
+  >
+  <span *ngIf="character.skills.insight.hasExpertise" class="material-icons">
+    check_circle</span
+  >
+  <span>{{ character.skills.insight.skill }}</span>
+</div>
+
+<div (click)="setProficiency('medicine')">
+  <span
+    *ngIf="
+      character.skills.medicine.isProficient &&
+      !character.skills.medicine.hasExpertise
+    "
+    class="material-icons"
+    >check_circle_outline</span
+  >
+  <span *ngIf="!character.skills.medicine.isProficient" class="material-icons">
+    radio_button_unchecked</span
+  >
+  <span *ngIf="character.skills.medicine.hasExpertise" class="material-icons">
+    check_circle</span
+  >
+  <span>{{ character.skills.medicine.skill }}</span>
+</div>
+
+<div (click)="setProficiency('perception')">
+  <span
+    *ngIf="
+      character.skills.perception.isProficient &&
+      !character.skills.perception.hasExpertise
+    "
+    class="material-icons"
+    >check_circle_outline</span
+  >
+  <span
+    *ngIf="!character.skills.perception.isProficient"
+    class="material-icons"
+  >
+    radio_button_unchecked</span
+  >
+  <span *ngIf="character.skills.perception.hasExpertise" class="material-icons">
+    check_circle</span
+  >
+  <span>{{ character.skills.perception.skill }}</span>
+</div>
+
+<div (click)="setProficiency('survival')">
+  <span
+    *ngIf="
+      character.skills.survival.isProficient &&
+      !character.skills.survival.hasExpertise
+    "
+    class="material-icons"
+    >check_circle_outline</span
+  >
+  <span *ngIf="!character.skills.survival.isProficient" class="material-icons">
+    radio_button_unchecked</span
+  >
+  <span *ngIf="character.skills.survival.hasExpertise" class="material-icons">
+    check_circle</span
+  >
+  <span>{{ character.skills.survival.skill }}</span>
+</div>
+
+<div (click)="setProficiency('deception')">
+  <span
+    *ngIf="
+      character.skills.deception.isProficient &&
+      !character.skills.deception.hasExpertise
+    "
+    class="material-icons"
+    >check_circle_outline</span
+  >
+  <span *ngIf="!character.skills.deception.isProficient" class="material-icons">
+    radio_button_unchecked</span
+  >
+  <span *ngIf="character.skills.deception.hasExpertise" class="material-icons">
+    check_circle</span
+  >
+  <span>{{ character.skills.deception.skill }}</span>
+</div>
+
+<div (click)="setProficiency('intimidation')">
+  <span
+    *ngIf="
+      character.skills.intimidation.isProficient &&
+      !character.skills.intimidation.hasExpertise
+    "
+    class="material-icons"
+    >check_circle_outline</span
+  >
+  <span
+    *ngIf="!character.skills.intimidation.isProficient"
+    class="material-icons"
+  >
+    radio_button_unchecked</span
+  >
+  <span
+    *ngIf="character.skills.intimidation.hasExpertise"
+    class="material-icons"
+  >
+    check_circle</span
+  >
+  <span>{{ character.skills.intimidation.skill }}</span>
+</div>
+
+<div (click)="setProficiency('performance')">
+  <span
+    *ngIf="
+      character.skills.performance.isProficient &&
+      !character.skills.performance.hasExpertise
+    "
+    class="material-icons"
+    >check_circle_outline</span
+  >
+  <span
+    *ngIf="!character.skills.performance.isProficient"
+    class="material-icons"
+  >
+    radio_button_unchecked</span
+  >
+  <span
+    *ngIf="character.skills.performance.hasExpertise"
+    class="material-icons"
+  >
+    check_circle</span
+  >
+  <span>{{ character.skills.performance.skill }}</span>
+</div>
+
+<div>
+  <span> Maximum Hit Points:{{ character.maxHitPoints }}</span>
+  <span> Current:{{ character.currentHitPoints }}</span>
+</div>
+
+<div>Armor Class:{{ character.armorClass }}</div>
+
+<div>
+  <span> Tool Proficiencies: </span>
+  <span *ngFor="let tool of character.tools">
+    <span>{{ tool.skill }}</span>
+  </span>
+</div>
+
+<div>
+  <span> Languages: </span>
+  <span>{{ character.languages }}</span>
+</div>
